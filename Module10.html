@@ -8,13 +8,12 @@
 <title>Color change table</title>
 <body>
     <table id="myTable" style="border-spacing:0px"></table>
-    
     <script>
         var tableData = [['First Name', 'Last Name', 'Company'],
-     ['Bill', 'Gates', 'Microsoft'],
-     ['Timothy', 'Cook', 'Apple'],
-     ['Larry', 'Page', 'Google'], 
-     ['Mark', 'Zuckerberg', 'Facebook']];
+                        ['Bill', 'Gates', 'Microsoft'],
+                        ['Timothy', 'Cook', 'Apple'],
+                        ['Larry', 'Page', 'Google'], 
+                        ['Mark', 'Zuckerberg', 'Facebook']];
         function createTable() {
             var table = document.getElementById("myTable");
             for (var i = 0; i < 5; i++) {
@@ -33,7 +32,6 @@
                         }
                 }
             }
-       
         } 
         window.onload = createTable;
     </script>
