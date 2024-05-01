@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Cat follows</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  .background {
+    background-image: url('background.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .foreground-img {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+<div class="background">
+  <img src="cat.png" id="foregroundImg" class="foreground-img" alt="РљРѕС‚">
+</div>
+
+<script>
+  document.addEventListener('mousemove', function(event) {
+    var mousepositionX = event.clientX;
+    var mousepositionY = event.clientY;
+    var movingImage = document.getElementById('foregroundImg');
+
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    var movingImagePositionX = Math.min(windowWidth - movingImage.width, mousepositionX);
+    var movingImagePositionY = Math.min(windowHeight - movingImage.height, mousepositionY);
+
+    movingImage.style.left = movingImagePositionX + 'px';
+    movingImage.style.top = movingImagePositionY + 'px';
+  });
+</script>
+</body>
+</html>
