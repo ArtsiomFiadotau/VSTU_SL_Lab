@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<title>Color change table</title>
+<body>
+    <table id="myTable" style="border-spacing:0px"></table>
+    
+    <script>
+        var tableData = [['First Name', 'Last Name', 'Company'],
+     ['Bill', 'Gates', 'Microsoft'],
+     ['Timothy', 'Cook', 'Apple'],
+     ['Larry', 'Page', 'Google'], 
+     ['Mark', 'Zuckerberg', 'Facebook']];
+        function createTable() {
+            var table = document.getElementById("myTable");
+            for (var i = 0; i < 5; i++) {
+            var tableRow = table.insertRow(i);
+                for (var j = 0; j < 3; j++) {
+                    var tableCell = tableRow.insertCell(j);
+                    tableCell.innerHTML = tableData[i][j];
+                    if (i == 0) tableCell.style.fontWeight = "bold";
+                    tableCell.style.border = '1px solid black';
+                    tableCell.style.padding = '10px';
+                    tableCell.onmouseover = function() {
+                        this.style.backgroundColor = 'orange';
+                        }
+                        tableCell.onmouseout = function() {
+                        this.style.backgroundColor = '';
+                        }
+                }
+            }
+       
+        } 
+        window.onload = createTable;
+    </script>
+</body>
+</html>
